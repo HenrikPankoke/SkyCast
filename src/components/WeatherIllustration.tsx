@@ -1,5 +1,17 @@
 import { motion } from "motion/react";
 
+// Explicit imports so Vite includes and hashes these images during production builds
+import imgSunny from "../assets/images/weather_sunny_1781336486984.jpg";
+import imgCloudy from "../assets/images/weather_cloudy_1781336527150.jpg";
+import imgPartlyCloudy from "../assets/images/weather_partly_cloudy_1781338389511.jpg";
+import imgDrizzle from "../assets/images/weather_drizzle_1781338174554.jpg";
+import imgRainy from "../assets/images/weather_rainy_1781336513302.jpg";
+import imgHeavyRain from "../assets/images/weather_heavy_rain_1781338161247.jpg";
+import imgStormy from "../assets/images/weather_stormy_1781338124972.jpg";
+import imgSnowy from "../assets/images/weather_snowy_1781336499453.jpg";
+import imgFoggy from "../assets/images/weather_foggy_1781338137082.jpg";
+import imgWindy from "../assets/images/weather_windy_1781338190131.jpg";
+
 interface WeatherIllustrationProps {
   weatherCode: number;
   temperature: number; // in Celsius
@@ -12,7 +24,7 @@ export default function WeatherIllustration({
   windSpeed = 0,
 }: WeatherIllustrationProps) {
   // Map images based on conditions
-  let imageUrl = "/src/assets/images/weather_sunny_1781336486984.jpg"; // Default sunny
+  let imageUrl = imgSunny; // Default sunny
   let title = "Sunny Sunshine!";
   let subtitle = "A duck floating under a parasol, enjoying life.";
   let bgColorClass = "from-amber-100 to-orange-200 dark:from-amber-950/40 dark:to-orange-950/40";
@@ -38,55 +50,55 @@ export default function WeatherIllustration({
   const isWindy = windSpeed >= 25;
 
   if (isStormy) {
-    imageUrl = "/src/assets/images/weather_stormy_1781338124972.jpg";
+    imageUrl = imgStormy;
     title = "Thunderous Sparks!";
     subtitle = "A startled kitchen with static-electricity fluffed fur watching crackling lightning.";
     bgColorClass = "from-violet-100 to-purple-200 dark:from-violet-950/40 dark:to-purple-950/40";
     textColorClass = "text-violet-800 dark:text-violet-200";
   } else if (isSnowy) {
-    imageUrl = "/src/assets/images/weather_snowy_1781336499453.jpg";
+    imageUrl = imgSnowy;
     title = "Chilly Brrr!";
     subtitle = "A cute penguin shivering on a snowstorm mountain trail.";
     bgColorClass = "from-sky-100 to-blue-200 dark:from-sky-950/40 dark:to-sky-955/40";
     textColorClass = "text-sky-800 dark:text-sky-200";
   } else if (isWindy && !isHeavyRain && !isRainy && !isDrizzle && !isStormy) {
-    imageUrl = "/src/assets/images/weather_windy_1781338190131.jpg";
+    imageUrl = imgWindy;
     title = "Whoosh! Windy!";
     subtitle = "A fluffy squirrel holding on tight as its tail blows dynamically in the autumn breeze.";
     bgColorClass = "from-zinc-100 to-slate-200 dark:from-zinc-900 dark:to-slate-800";
     textColorClass = "text-zinc-800 dark:text-zinc-200";
   } else if (isHeavyRain) {
-    imageUrl = "/src/assets/images/weather_heavy_rain_1781338161247.jpg";
+    imageUrl = imgHeavyRain;
     title = "Heavy Downpour!";
     subtitle = "A busy baby beaver building a sturdy stick dam during a cozy rain flood.";
     bgColorClass = "from-blue-200 to-indigo-300 dark:from-blue-950/50 dark:to-indigo-300/40";
     textColorClass = "text-blue-800 dark:text-blue-200";
   } else if (isRainy) {
-    imageUrl = "/src/assets/images/weather_rainy_1781336513302.jpg";
+    imageUrl = imgRainy;
     title = "Splish Splash!";
     subtitle = "A cozy frog staying dry under a cute yellow umbrella.";
     bgColorClass = "from-teal-100 to-emerald-200 dark:from-teal-950/40 dark:to-emerald-950/40";
     textColorClass = "text-emerald-800 dark:text-emerald-200";
   } else if (isDrizzle) {
-    imageUrl = "/src/assets/images/weather_drizzle_1781338174554.jpg";
+    imageUrl = imgDrizzle;
     title = "Gentle Drizzle!";
     subtitle = "A happy little snail crawling slowly on a wet green leaf, enjoying safe mist.";
     bgColorClass = "from-emerald-50 to-teal-150 dark:from-emerald-950/30 dark:to-teal-950/30";
     textColorClass = "text-teal-800 dark:text-teal-200";
   } else if (isFoggy) {
-    imageUrl = "/src/assets/images/weather_foggy_1781338137082.jpg";
+    imageUrl = imgFoggy;
     title = "Mysterious Fog!";
     subtitle = "A sleepy round detective owl peering through dense, soft fog.";
     bgColorClass = "from-indigo-100 to-slate-200 dark:from-indigo-950/40 dark:to-slate-900/40";
     textColorClass = "text-indigo-800 dark:text-indigo-200";
   } else if (isPartlyCloudy) {
-    imageUrl = "/src/assets/images/weather_partly_cloudy_1781338389511.jpg";
+    imageUrl = imgPartlyCloudy;
     title = "Partly Cloudy!";
     subtitle = "A cute little red panda in a blue scarf resting on a branch, looking up at soft clouds.";
     bgColorClass = "from-blue-100 to-sky-200 dark:from-blue-950/40 dark:to-sky-955/40";
     textColorClass = "text-sky-800 dark:text-sky-200";
   } else if (isOvercast) {
-    imageUrl = "/src/assets/images/weather_cloudy_1781336527150.jpg";
+    imageUrl = imgOvercast;
     title = "Puzzled Skies!";
     subtitle = "A baffled sheep pondering. What a thick white cloud!";
     bgColorClass = "from-slate-200 to-gray-300 dark:from-slate-900 dark:to-gray-800";
