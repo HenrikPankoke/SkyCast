@@ -98,7 +98,7 @@ export default function WeatherIllustration({
     bgColorClass = "from-blue-100 to-sky-200 dark:from-blue-950/40 dark:to-sky-955/40";
     textColorClass = "text-sky-800 dark:text-sky-200";
   } else if (isOvercast) {
-    imageUrl = imgOvercast;
+    imageUrl = imgCloudy;
     title = "Puzzled Skies!";
     subtitle = "A baffled sheep pondering. What a thick white cloud!";
     bgColorClass = "from-slate-200 to-gray-300 dark:from-slate-900 dark:to-gray-800";
