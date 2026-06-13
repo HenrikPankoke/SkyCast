@@ -1,0 +1,6 @@
+{
+  "name": "Weather Cast",
+  "description": "A progressive local weather app featuring a stunning responsive Bento Grid layout, real-time data, 7-day forecasts, search by city or ZIP code, favorite cities, dark mode, and playful weather condition illustrations.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
